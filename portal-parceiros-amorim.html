@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amorim Global · Portal de Parceiros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Amorim brand */
+    --brand-blue: #0057FF;
+    --brand-blue-dark: #0040C4;
+    --brand-blue-soft: #EAF1FF;
+    --brand-navy: #0A1628;
+
+    /* Apple-inspired neutrals */
+    --bg: #FFFFFF;
+    --surface: #FBFBFD;
+    --surface-2: #F5F5F7;
+    --border: rgba(0,0,0,0.08);
+    --border-strong: rgba(0,0,0,0.14);
+    --text: #1D1D1F;
+    --text-2: #4B5563;
+    --text-3: #86868B;
+
+    /* Accents */
+    --green: #00875A;
+    --green-soft: #E5F4ED;
+    --amber: #92400E;
+    --amber-soft: #FEF3C7;
+    --amber-border: #F59E0B;
+
+    /* Type */
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+    letter-spacing: -0.005em;
+  }
+
+  /* HEADER */
+  .top-header {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .brand-text {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .brand-tag {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text-3);
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+    margin-left: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .header-meta {
+    font-size: 13px;
+    color: var(--text-3);
+    font-weight: 500;
+  }
+
+  /* COUNTRY TABS */
+  .country-tabs {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 65px;
+    z-index: 90;
+  }
+
+  .tabs-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4px;
+    padding: 0 40px;
+  }
+
+  .country-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-2);
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 16px 4px;
+    margin-right: 28px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    letter-spacing: -0.01em;
+  }
+
+  .country-tab:hover {
+    color: var(--text);
+  }
+
+  .country-tab.active {
+    color: var(--text);
+    border-bottom-color: var(--brand-blue);
+    font-weight: 600;
+  }
+
+  /* MAIN LAYOUT */
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 130px);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    padding: 32px 0;
+    position: sticky;
+    top: 130px;
+    height: calc(100vh - 130px);
+    overflow-y: auto;
+  }
+
+  .sidebar-group {
+    margin-bottom: 32px;
+  }
+
+  .sidebar-label {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    padding: 0 28px 12px 28px;
+  }
+
+  .sidebar-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--text-2);
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 9px 28px;
+    margin: 1px 0;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: all 0.15s ease;
+    letter-spacing: -0.005em;
+  }
+
+  .sidebar-item:hover {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+
+  .sidebar-item.active {
+    color: var(--brand-blue);
+    background: var(--brand-blue-soft);
+    border-left-color: var(--brand-blue);
+    font-weight: 600;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 56px 56px 80px 56px;
+    overflow-x: hidden;
+  }
+
+  .partner-panel {
+    display: none;
+  }
+
+  .partner-panel.active {
+    display: block;
+    animation: fadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .partner-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .partner-title {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .partner-subtitle {
+    font-size: 17px;
+    color: var(--text-2);
+    margin-bottom: 32px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* CHIPS */
+  .id-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  .chip svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--text-3);
+  }
+
+  .chip a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .chip a:hover { color: var(--brand-blue); }
+
+  /* WARNING BANNER */
+  .warning-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--amber-soft);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 3px solid var(--amber-border);
+    color: var(--amber);
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .warning-banner svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* SECTIONS */
+  .section {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .section:hover { border-color: var(--border-strong); }
+  .section.open { border-color: var(--border-strong); }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .section-title {
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+    color: var(--text);
+  }
+
+  .section-chevron {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    color: var(--text-3);
+    flex-shrink: 0;
+  }
+
+  .section.open .section-chevron {
+    transform: rotate(180deg);
+    color: var(--brand-blue);
+  }
+
+  .section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .section.open .section-body {
+    max-height: 8000px;
+  }
+
+  .section-content {
+    padding: 4px 24px 26px 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+
+  .section-content p {
+    color: var(--text-2);
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .section-content p:last-child { margin-bottom: 0; }
+
+  .meta-line {
+    color: var(--text-2);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .meta-line strong {
+    color: var(--text);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .meta-line a {
+    color: var(--brand-blue);
+    text-decoration: none;
+  }
+
+  .meta-line a:hover { text-decoration: underline; }
+
+  /* LIFEPASS HERO */
+  .lifepass-hero {
+    background: linear-gradient(135deg, #0A1628 0%, #1B3A6B 100%);
+    border-radius: 16px;
+    padding: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .lifepass-hero-eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #B6CDFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .lifepass-hero-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    line-height: 1.15;
+  }
+
+  .lifepass-hero-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #D2DCEA;
+    margin-bottom: 22px;
+  }
+
+  .lifepass-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .lifepass-stage {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .lifepass-stage-num {
+    font-size: 11px;
+    color: #B6CDFF;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .lifepass-stage-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .lifepass-stage-desc {
+    font-size: 12px;
+    color: #A0AEC0;
+  }
+
+  /* HIGHLIGHT GRID (cards de destaque) */
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 18px 0 8px 0;
+  }
+
+  .highlight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .highlight-card-label {
+    font-size: 12px;
+    color: var(--text-3);
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-card-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .highlight-card-sub {
+    font-size: 12px;
+    color: var(--text-2);
+    margin-top: 4px;
+  }
+
+  /* BADGES */
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 4px 0;
+  }
+
+  .badge {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .badge.green {
+    background: var(--green-soft);
+    border-color: rgba(0, 135, 90, 0.2);
+    color: var(--green);
+  }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 6px 0;
+    font-size: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead th {
+    background: var(--surface-2);
+    color: var(--text-2);
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table tbody td {
+    padding: 13px 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+
+  .data-table tbody tr:first-child td { border-top: none; }
+  .data-table tbody tr:hover td { background: var(--surface); }
+
+  .price {
+    color: var(--green);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .price-strong {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .consult-badge {
+    display: inline-block;
+    background: var(--surface-2);
+    color: var(--text-3);
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* BUTTONS */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 980px;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    letter-spacing: -0.005em;
+  }
+
+  .btn-primary {
+    background: var(--brand-blue);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-blue-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: var(--surface-2);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--bg);
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--brand-blue);
+    padding: 10px 14px;
+  }
+
+  .btn-ghost:hover {
+    background: var(--brand-blue-soft);
+  }
+
+  .btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* SUB-TABS */
+  .sub-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 22px;
+    background: var(--surface-2);
+    padding: 4px;
+    border-radius: 10px;
+    width: fit-content;
+  }
+
+  .sub-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-2);
+    padding: 8px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+    letter-spacing: -0.005em;
+  }
+
+  .sub-tab:hover { color: var(--text); }
+
+  .sub-tab.active {
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .sub-tab-panel {
+    display: none;
+  }
+
+  .sub-tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* STEP LIST */
+  .step-list {
+    list-style: none;
+    counter-reset: step;
+    margin: 8px 0 4px 0;
+  }
+
+  .step-list li {
+    counter-increment: step;
+    position: relative;
+    padding: 12px 0 12px 44px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+    font-size: 14.5px;
+  }
+
+  .step-list li:last-child { border-bottom: none; }
+
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 28px;
+    height: 28px;
+    background: var(--brand-blue-soft);
+    color: var(--brand-blue);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* CALLOUT */
+  .note-callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand-blue);
+    padding: 14px 18px;
+    border-radius: 10px;
+    color: var(--text-2);
+    font-size: 14px;
+    margin: 14px 0;
+    line-height: 1.6;
+  }
+
+  .note-callout strong { color: var(--text); font-weight: 600; }
+  .note-callout a { color: var(--brand-blue); text-decoration: none; }
+  .note-callout a:hover { text-decoration: underline; }
+
+  /* INFO PILL list */
+  .info-pills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+  }
+
+  .info-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .info-pill-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .info-pill-value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    text-align: center;
+    color: var(--text-3);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.10); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.22); }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .layout { grid-template-columns: 240px 1fr; }
+    .content { padding: 40px 32px; }
+    .partner-title { font-size: 36px; }
+  }
+
+  @media (max-width: 768px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar {
+      position: relative;
+      top: auto;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner { padding: 14px 20px; }
+    .tabs-inner { padding: 0 14px; overflow-x: auto; }
+    .country-tabs { top: 62px; }
+    .content { padding: 32px 20px; }
+    .partner-title { font-size: 30px; }
+    .lifepass-stages { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.png" alt="Amorim Global" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">Amorim Global</span>
+      <span class="brand-tag">Portal de Parceiros</span>
+    </div>
+    <div class="header-meta">Uso interno · Time Jurídico</div>
+  </div>
+</header>
+
+<!-- COUNTRY TABS -->
+<nav class="country-tabs">
+  <div class="tabs-inner">
+    <button class="country-tab active" data-country="espanha">Espanha</button>
+    <button class="country-tab" data-country="portugal">Portugal</button>
+    <button class="country-tab" data-country="irlanda">Irlanda</button>
+  </div>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-country" data-country="espanha">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Escolas de Idioma</div>
+        <button class="sidebar-item active" data-partner="ail">AIL Español</button>
+        <button class="sidebar-item" data-partner="sevilla">Sevilla Habla</button>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Parceiros Jurídicos</div>
+        <button class="sidebar-item" data-partner="bacaro">Bacaró Abogados</button>
+        <button class="sidebar-item" data-partner="ceca">Ceca Magán</button>
+        <button class="sidebar-item" data-partner="chapapria">Chapapría Navarro</button>
+        <button class="sidebar-item" data-partner="larea">Larea &amp; Co.</button>
+      </div>
+    </div>
+
+    <div class="sidebar-country" data-country="portugal" style="display:none;">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Escolas Profissionalizantes</div>
+        <button class="sidebar-item" data-partner="efuturo">eFuturo Academy</button>
+        <button class="sidebar-item" data-partner="schoolhouse">Schoolhouse</button>
+      </div>
+    </div>
+
+    <div class="sidebar-country" data-country="irlanda" style="display:none;">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Escolas de Idioma</div>
+        <button class="sidebar-item" data-partner="atc">ATC Language Schools</button>
+        <button class="sidebar-item" data-partner="ulearn">ULearn</button>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content" id="content">
+
+    <!-- =========================== AIL ESPAÑOL =========================== -->
+    <div class="partner-panel active" data-partner="ail">
+      <div class="partner-eyebrow">Espanha · Escola de Idioma</div>
+      <h1 class="partner-title">AIL Español</h1>
+      <p class="partner-subtitle">Rede acreditada pelo Instituto Cervantes presente em Madrid, Barcelona, Málaga e Valencia.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola de Idioma</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Madrid · Barcelona · Málaga · Valencia</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@ailespanol.com">info@ailespanol.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg> <a href="https://ailespanol.com" target="_blank" rel="noopener noreferrer">ailespanol.com</a></div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>A AIL Español é uma das maiores redes de escolas de espanhol da Espanha, com mais de 20 anos de experiência. Acreditada pelo Instituto Cervantes, está autorizada a emitir Carta de Aceitação oficial para fins de visto de estudante, reconhecida em todos os consulados e embaixadas.</p>
+          <div class="badge-row">
+            <span class="badge green">Instituto Cervantes</span>
+            <span class="badge green">FEDELE</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos e preços</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+
+          <div class="sub-tabs" data-ail-tabs>
+            <button class="sub-tab active" data-city="madrid">Madrid</button>
+            <button class="sub-tab" data-city="barcelona">Barcelona</button>
+            <button class="sub-tab" data-city="malaga">Málaga</button>
+            <button class="sub-tab" data-city="valencia">Valencia</button>
+          </div>
+
+          <div class="sub-tab-panel active" data-city-panel="madrid">
+            <p class="meta-line"><strong>Endereço:</strong> Av. de la Ciudad de Barcelona 120, Madrid</p>
+            <table class="data-table">
+              <thead><tr><th>Curso</th><th>Duração</th><th>Preço/semana</th><th>Matrícula</th></tr></thead>
+              <tbody>
+                <tr><td>Intensivo 20</td><td>1–7 semanas</td><td class="price">€210</td><td>€60</td></tr>
+                <tr><td>Intensivo 20</td><td>8–19 semanas</td><td class="price">€180</td><td>€60</td></tr>
+                <tr><td>Intensivo 20</td><td>20+ semanas</td><td class="price">€170</td><td>Incluída</td></tr>
+                <tr><td>Intensivo 25 (+ Conversação 5)</td><td>1–7 semanas</td><td class="price">€260</td><td>€60</td></tr>
+                <tr><td>Intensivo 25</td><td>8–19 semanas</td><td class="price">€230</td><td>€60</td></tr>
+                <tr><td>Intensivo 25</td><td>20+ semanas</td><td class="price">€220</td><td>Incluída</td></tr>
+                <tr><td>Intensivo 30 (+ Tarde 10)</td><td>1–7 semanas</td><td class="price">€310</td><td>€60</td></tr>
+                <tr><td>Intensivo 30</td><td>8–19 semanas</td><td class="price">€280</td><td>€60</td></tr>
+                <tr><td>Intensivo 30</td><td>20+ semanas</td><td class="price">€270</td><td>Incluída</td></tr>
+                <tr><td>Intensivo 35</td><td>1–7 semanas</td><td class="price">€360</td><td>€60</td></tr>
+                <tr><td>Intensivo 35</td><td>8–19 semanas</td><td class="price">€330</td><td>€60</td></tr>
+                <tr><td>Intensivo 35</td><td>20+ semanas</td><td class="price">€320</td><td>Incluída</td></tr>
+                <tr><td>Long-Term 20 (programa visto)</td><td>15–52 semanas</td><td class="price">A partir de €170</td><td>Incluída 20+ sem.</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>1–7 semanas</td><td class="price">A partir de €120</td><td>€60</td></tr>
+              </tbody>
+            </table>
+            <div class="note-callout"><strong>University Pathway Program.</strong> Programa completo com espanhol intensivo + preparação PCE/EBAU + apoio visto. Duração: 24–56 semanas. Preço: consultar.</div>
+            <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h10–13h. Turmas A1–C2. Início toda segunda-feira.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://ailmadrid.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a>
+              <a class="btn btn-secondary" href="https://ailmadrid.com/courses/long-term-spanish-course-and-visa/" target="_blank" rel="noopener noreferrer">Long-Term + Visto</a>
+              <a class="btn btn-secondary" href="https://ailmadrid.com/courses/curso-preparacion-universidad-espanola-madrid/" target="_blank" rel="noopener noreferrer">University Pathway</a>
+            </div>
+          </div>
+
+          <div class="sub-tab-panel" data-city-panel="barcelona">
+            <table class="data-table">
+              <thead><tr><th>Curso</th><th>Duração</th><th>Preço/semana</th><th>Matrícula</th></tr></thead>
+              <tbody>
+                <tr><td>Intensivo 20</td><td>1–7 semanas</td><td class="price">€180</td><td>€60</td></tr>
+                <tr><td>Intensivo 20</td><td>8–19 semanas</td><td class="price">€160</td><td>€60</td></tr>
+                <tr><td>Total Imersão 30</td><td>Qualquer</td><td class="price">€270</td><td>€60</td></tr>
+                <tr><td>Premium 25 (20 grupo + 5 privadas)</td><td>Qualquer</td><td class="price">€355</td><td>€60</td></tr>
+                <tr><td>Long-Term 20 (visto)</td><td>20+ semanas</td><td><span class="consult-badge">Consultar</span></td><td>—</td></tr>
+              </tbody>
+            </table>
+            <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–13h ou 14h–18h. Turmas A1–C2. Início toda segunda-feira.</p>
+            <div class="note-callout">Preços de longa duração: confirmar diretamente com a escola antes de informar ao cliente.</div>
+            <div class="btn-row"><a class="btn btn-primary" href="https://ailbarcelona.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a></div>
+          </div>
+
+          <div class="sub-tab-panel" data-city-panel="malaga">
+            <table class="data-table">
+              <thead><tr><th>Curso</th><th>Duração</th><th>Preço/semana</th><th>Matrícula</th></tr></thead>
+              <tbody>
+                <tr><td>Intensivo 20 / Long-Term</td><td>1–7 semanas</td><td class="price">€180</td><td>€60</td></tr>
+                <tr><td>Intensivo 20 / Long-Term</td><td>8+ semanas</td><td class="price">€162</td><td>€60</td></tr>
+                <tr><td>Intensivo 20 / Long-Term</td><td>9+ semanas</td><td class="price">€162</td><td>Incluída + livros</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>1–7 semanas</td><td class="price">€110</td><td>€60</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>8+ semanas</td><td class="price">€100</td><td>€60</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>40+ semanas</td><td class="price">€100</td><td>Incluída</td></tr>
+              </tbody>
+            </table>
+            <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–12h50 ou 13h10–17h. Início toda segunda-feira.</p>
+            <div class="note-callout">Não cobra suplemento de alta temporada.</div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://ailmalaga.com/our-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a>
+              <a class="btn btn-secondary" href="https://www.ailmalaga.com/courses/long-term-spanish-course-in-malaga/" target="_blank" rel="noopener noreferrer">Long-Term</a>
+            </div>
+          </div>
+
+          <div class="sub-tab-panel" data-city-panel="valencia">
+            <table class="data-table">
+              <thead><tr><th>Curso</th><th>Duração</th><th>Preço/semana</th><th>Matrícula</th></tr></thead>
+              <tbody>
+                <tr><td>Semi-Intensivo 10</td><td>1–7 semanas</td><td class="price">€110</td><td>€60</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>8–19 semanas</td><td class="price">€100</td><td>€60</td></tr>
+                <tr><td>Semi-Intensivo 10</td><td>20+ semanas</td><td class="price">€100</td><td>Incluída</td></tr>
+                <tr><td>Long-Term Semi-Intensivo 10</td><td>20–52 semanas</td><td class="price">€150</td><td>Incluída</td></tr>
+                <tr><td>Premium 25 (20 grupo + 5 privadas)</td><td>1–7 semanas</td><td class="price">€320</td><td>€60</td></tr>
+                <tr><td>Premium 25</td><td>20+ semanas</td><td class="price">€320</td><td>Incluída</td></tr>
+                <tr><td>Aulas Privadas — 1 aluno</td><td>1–14 aulas</td><td class="price">€35/aula</td><td>—</td></tr>
+                <tr><td>Aulas Privadas — 1 aluno</td><td>15+ aulas</td><td class="price">€30/aula</td><td>—</td></tr>
+                <tr><td>Intensivo 20 (curta duração)</td><td>Consultar</td><td><span class="consult-badge">Consultar</span></td><td>€60</td></tr>
+              </tbody>
+            </table>
+            <div class="note-callout">
+              <strong>University Pathway, Valencia:</strong> Standard Track <span class="price-strong">€6.200</span> (A2–B1) · Parallel Program a partir de <span class="price-strong">€3.500</span> (B1+, 5–8 meses) · Classic Track sob consulta.
+            </div>
+            <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–13h ou 14h–18h. Início toda segunda-feira.</p>
+            <div class="btn-row"><a class="btn btn-primary" href="https://ailvalencia.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a></div>
+          </div>
+
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Condições para visto de estudante</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Condição</th></tr></thead>
+            <tbody>
+              <tr><td>Carga horária mínima</td><td>20h/semana (Intensivo 20 ou Long-Term 20)</td></tr>
+              <tr><td>Formato</td><td>100% presencial</td></tr>
+              <tr><td>Pagamento</td><td>Antecipado integral (ou depósito €200 para reserva)</td></tr>
+              <tr><td>Documento emitido</td><td>Carta de Aceitação oficial</td></tr>
+              <tr><td>Quem gere o visto</td><td>Amorim Global (não a escola)</td></tr>
+              <tr><td>Política em negativa</td><td>Consultar com cada unidade</td></tr>
+              <tr><td>Alojamento</td><td>Disponível em todas as cidades</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Definir cidade e duração conforme perfil do cliente.</li>
+            <li>Acessar o site da unidade ou contatar pelo formulário.</li>
+            <li>Para visto, solicitar o Long-Term Course 20 e mencionar necessidade da Carta de Aceitação.</li>
+            <li>Cliente realiza pagamento diretamente à escola.</li>
+            <li>Escola emite a Carta de Aceitação. Amorim Global conduz o processo de visto.</li>
+          </ol>
+          <div class="note-callout">
+            <strong>Contato por cidade:</strong>
+            Madrid <a href="https://ailmadrid.com/contact" target="_blank" rel="noopener noreferrer">ailmadrid.com/contact</a> ·
+            Barcelona <a href="https://ailbarcelona.com/contact" target="_blank" rel="noopener noreferrer">ailbarcelona.com/contact</a> ·
+            Málaga <a href="mailto:info@ailmalaga.com">info@ailmalaga.com</a> ·
+            Valencia <a href="mailto:info@ailvalencia.com">info@ailvalencia.com</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== SEVILLA HABLA =========================== -->
+    <div class="partner-panel" data-partner="sevilla">
+      <div class="partner-eyebrow">Espanha · Escola de Idioma</div>
+      <h1 class="partner-title">Sevilla Habla</h1>
+      <p class="partner-subtitle">Escola acreditada pelo Instituto Cervantes no centro histórico de Sevilla.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola de Idioma</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Sevilla</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@sevillahabla.com">info@sevillahabla.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 954 21 53 44</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp +34 682 47 65 13</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Escola acreditada pelo Instituto Cervantes especializada exclusivamente no ensino do espanhol, localizada no coração do centro de Sevilla. Grupos reduzidos e participativos, com foco em comunicação desde o primeiro dia. 18 grupos por nível (A1 a C1).</p>
+          <p class="meta-line"><strong>Entidade:</strong> Sevilla Habla Enterprise S.L. · CIF: B90430265</p>
+          <p class="meta-line"><strong>Endereço:</strong> C/Cuesta del Rosario, 8 – 2ºB, 41004, Sevilla</p>
+          <div class="badge-row">
+            <span class="badge green">Instituto Cervantes</span>
+            <span class="badge green">ACEIA</span>
+            <span class="badge green">FEDELE</span>
+            <span class="badge green">ACADE</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos e preços</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Curso</th><th>Descrição</th><th>Preço</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Curso Intensivo</td>
+                <td>20h/semana: 15h aulas em grupo + 5h extra (conversação, vocabulário, cultura) + atividades externas. Níveis A1–C1. Turno manhã (10h–13h30) ou tarde (15h–18h30). Início toda segunda. Duração 1 semana a 1 ano.</td>
+                <td class="price-strong">€185/sem.</td>
+              </tr>
+              <tr>
+                <td>Aulas Particulares</td>
+                <td>Presencial ou online (Skype, Zoom, WeChat). 1:1 ou grupos de 2–3 alunos com mesmo nível. Preparação DELE. Horário 9h–20h, qualquer dia do ano.</td>
+                <td class="price-strong">€30/hora</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Grupos de 2–3 alunos com mesmo nível: <strong>20% de desconto</strong> por aluno nas aulas particulares. Descontos para cursos intensivos de longa duração.</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://sevillahabla.com/es/curso-intensivo/" target="_blank" rel="noopener noreferrer">Curso Intensivo</a>
+            <a class="btn btn-secondary" href="https://sevillahabla.com/es/clases-privadas/" target="_blank" rel="noopener noreferrer">Aulas Particulares</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Condições para visto de estudante</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Condição</th></tr></thead>
+            <tbody>
+              <tr><td>Carga horária mínima</td><td>20h/semana</td></tr>
+              <tr><td>Formato</td><td>100% presencial</td></tr>
+              <tr><td>Pagamento</td><td>Integral antecipado obrigatório</td></tr>
+              <tr><td>Documento emitido</td><td>Carta de Admisión + fatura</td></tr>
+              <tr><td>Quem gere o visto</td><td>Amorim Global (não a escola)</td></tr>
+              <tr><td>Política em negativa</td><td>Reembolso com retenção de €300 (mediante denegação oficial)</td></tr>
+              <tr><td>Alojamento</td><td>Opcional, sem exigência de pagamento antecipado</td></tr>
+              <tr><td>Aulas online</td><td>Não válidas para fins de visto</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Enviar e-mail para info@sevillahabla.com informando nº de semanas, necessidade de alojamento e da Carta de Admisión para visto.</li>
+            <li>Escola responde em até 24h com formulário de inscrição, teste de nível e métodos de pagamento.</li>
+            <li>Cliente realiza pagamento integral antecipado.</li>
+            <li>Escola emite Carta de Admisión + fatura.</li>
+            <li>Amorim Global conduz o processo de visto.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== BACARÓ =========================== -->
+    <div class="partner-panel" data-partner="bacaro">
+      <div class="partner-eyebrow">Espanha · Escritório de Advocacia</div>
+      <h1 class="partner-title">Bacaró Abogados</h1>
+      <p class="partner-subtitle">Inovação jurídica com foco em direito patrimonial, fiscal, laboral e empresarial.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Calle Jorge Juan, 78, 6ºC · 28009 Madrid</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@bacaroabogados.com">info@bacaroabogados.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 919 36 28 39</div>
+      </div>
+
+      <div class="warning-banner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Atenção.</strong> A Bacaró não atua com serviços de imigração ou visto de nômade digital. Para demandas migratórias, indicar Chapapría, Larea ou Ceca Magán.</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o escritório</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Escritório de inovação jurídica com abordagem estratégica avançada, especializado em assessoria e defesa de pessoas e empresas. Foco em direito patrimonial, fiscal, laboral e empresarial.</p>
+          <p class="meta-line"><strong>Entidade:</strong> Carrasco &amp; Mariscal Asociados, S.L.P. · NIF B-44590073</p>
+          <p class="meta-line"><strong>Horário:</strong> Seg–Qui 10h–19h · Sex 10h–14h</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://bacaroabogados.com" target="_blank" rel="noopener noreferrer">bacaroabogados.com</a></p>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Serviços e honorários</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>No.</th><th>Serviço</th><th>Honorário</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Direito Patrimonial</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>2</td><td>Fiscal (fiscalidade estratégica e planejamento tributário)</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>3</td><td>Laboral (relações laborais e assessoria trabalhista)</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>4</td><td>Direito Empresarial</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Preços definidos caso a caso mediante envio das informações do cliente. O advogado responsável na Amorim Global acompanha o processo até o pagamento ao parceiro.</div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Enviar informações do caso para info@bacaroabogados.com com antecedência.</li>
+            <li>Contatos passam pela administração antes de serem encaminhados ao setor responsável.</li>
+            <li>Aguardar retorno com orçamento.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== CECA MAGÁN =========================== -->
+    <div class="partner-panel" data-partner="ceca">
+      <div class="partner-eyebrow">Espanha · Escritório de Advocacia</div>
+      <h1 class="partner-title">Ceca Magán</h1>
+      <p class="partner-subtitle">Escritório multidisciplinar com mais de 50 anos, referência em mobilidade internacional.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia Multidisciplinar</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:pruiz@cecamagan.com">pruiz@cecamagan.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 665 905 892</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o escritório</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Ceca Magán Abogados é um escritório multidisciplinar com mais de 50 anos de experiência na assessoria jurídica empresarial. Equipe altamente especializada nas principais áreas do direito, trabalhando de forma coordenada para oferecer serviço integral e de máxima qualidade.</p>
+          <p>A combinação de rigor técnico, visão estratégica e proximidade com o cliente consolidou o escritório como uma das firmas de referência no mercado jurídico espanhol. Foco principal para a Amorim: serviços migratórios para nômades digitais, profissionais qualificados e empresas com equipes internacionais.</p>
+          <p class="meta-line"><strong>Entidade:</strong> Ceca Magán Abogados, S.L.P. · NIF B85313997</p>
+          <p class="meta-line"><strong>Banco:</strong> Caixa Bank · IBAN ES74 2100 4411 1302 0006 7344</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://cecamagan.com" target="_blank" rel="noopener noreferrer">cecamagan.com</a></p>
+          <div class="badge-row">
+            <span class="badge green">Legal 500</span>
+            <span class="badge green">Best Lawyers</span>
+            <span class="badge green">Chambers &amp; Partners</span>
+            <span class="badge green">Leaders League</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Serviços e honorários 2026</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>No.</th><th>Serviço</th><th>Honorário</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Vistos para profissionais altamente qualificados e mobilidade internacional</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>2</td><td>Vistos para Nômades Digitais e Teletrabalhadores Internacionais</td><td><span class="price-strong">€1.600</span></td></tr>
+              <tr><td>3</td><td>Vistos para Empreendedores (Lei de Startups)</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>4</td><td>Vistos para estudantes e trabalhadores em estágio</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>5</td><td>Residência não lucrativa</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>6</td><td>Vistos especiais para profissionais de setores específicos</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>7</td><td>Permissões para cidadãos da UE e familiares</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>8</td><td>Reagrupamento familiar</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>9</td><td>Visto por transferência intraempresarial</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>10</td><td>Comunicação de deslocamento às autoridades</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>11</td><td>Acordo de designação ou teletrabalho internacional</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>12</td><td>Cumprimento de obrigações de seguridade social internacional</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>13</td><td>Análise da situação migratória da equipe estrangeira</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>14</td><td>Identificação de riscos e contingências migratórias</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>15</td><td>Controle da validade de permissões e renovações</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>16</td><td>Relatórios e planos de melhoria para conformidade migratória</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>17</td><td>Revisão de obrigações em deslocamentos internacionais</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Visto de Nômade Digital: desconto disponível para familiares e dependentes.</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="docs/Portfolio-CecaMagan-2026.pdf" target="_blank" rel="noopener noreferrer">Portfolio 2026 (PDF)</a>
+            <a class="btn btn-secondary" href="https://cecamagan.com" target="_blank" rel="noopener noreferrer">Site oficial</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Contatar diretamente pruiz@cecamagan.com ou +34 665 905 892.</li>
+            <li>Enviar todas as informações do caso para obter orçamento completo.</li>
+            <li>Dúvidas gerais: info@cecamagan.com.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== CHAPAPRÍA =========================== -->
+    <div class="partner-panel" data-partner="chapapria">
+      <div class="partner-eyebrow">Espanha · Escritório de Advocacia</div>
+      <h1 class="partner-title">Chapapría, Navarro y Asociados</h1>
+      <p class="partner-subtitle">Bufete com 50+ anos de tradição, foco multidisciplinar e atuação em direito de estrangeiros.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Valencia · Torrevieja</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:igorziolkowski@chapaprianavarroyasociados.com">igorziolkowski@chapaprianavarroyasociados.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 966 276 171 · +34 659 381 764</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o escritório</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Chapapría-Navarro &amp; Asociados é um escritório de advocacia que se destaca pela sua atuação em diversas áreas do direito, oferecendo assessoria jurídica completa e personalizada para cada cliente. Equipe formada por profissionais especializados em diferentes ramos jurídicos, permitindo uma abordagem multidisciplinar e eficiente na resolução de casos.</p>
+          <p>Possui foco importante na área de imigração, prestando suporte a clientes nacionais e internacionais em processos migratórios, regularização de residência e demais questões relacionadas ao direito migratório.</p>
+          <p class="meta-line"><strong>Entidade:</strong> Chapapría, Navarro y Asociados S.L.P. · NIF B42605592</p>
+          <p class="meta-line"><strong>Fundação:</strong> 1971 · 50+ anos de experiência</p>
+          <p class="meta-line"><strong>Banco:</strong> Caixa Bank · IBAN ES21 2100 8251 9313 0006 7524</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://chapaprianavarroyasociados.com" target="_blank" rel="noopener noreferrer">chapaprianavarroyasociados.com</a></p>
+          <p class="meta-line"><strong>E-mail geral:</strong> info@chapaprianavarroyasociados.com</p>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Serviços e honorários 2026</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>No.</th><th>Serviço</th><th>Honorário</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Visto de Nômade Digital</td><td><span class="price-strong">€1.500 + IVA</span></td></tr>
+              <tr><td>2</td><td>Gestão de Documentos e apostilas</td><td><span class="price-strong">€200 + IVA</span></td></tr>
+              <tr><td>3</td><td>Autorização de residência por investimento</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>4</td><td>Exequátur</td><td><span class="price-strong">€1.500 + IVA</span></td></tr>
+              <tr><td>5</td><td>Tramitação de autorizações de trabalho</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>6</td><td>Visto de Estudante</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>7</td><td>Solicitação do TIE</td><td><span class="price-strong">€300 + IVA</span></td></tr>
+              <tr><td>8</td><td>Tramitação de Autorização de Residência</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>9</td><td>Autorizações de residência por arraigo</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>10</td><td>Reagrupação Familiar</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>11</td><td>Recursos contra delegaciones</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>12</td><td>Processos de regularização documental</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>13</td><td>Obtenção de cidadania espanhola</td><td><span class="price-strong">€500 + IVA</span></td></tr>
+              <tr><td>14</td><td>Coordenação fiscal de não residentes</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>15</td><td>Preparação de Documentos Notariais</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>16</td><td>Preparação de documentação registral</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>17</td><td>Trâmites Consulares</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+              <tr><td>18</td><td>Gestão integral de processos administrativos internacionais</td><td><span class="consult-badge">Sob consulta</span></td></tr>
+            </tbody>
+          </table>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="docs/Portfolio-Chapapria-2026.pdf" target="_blank" rel="noopener noreferrer">Portfolio 2026 (PDF)</a>
+            <a class="btn btn-secondary" href="https://chapaprianavarroyasociados.com" target="_blank" rel="noopener noreferrer">Site oficial</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Enviar informações completas do caso para igorziolkowski@chapaprianavarroyasociados.com.</li>
+            <li>Aguardar orçamento.</li>
+            <li>Dúvidas gerais: info@chapaprianavarroyasociados.com · +34 966 276 171.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== LAREA =========================== -->
+    <div class="partner-panel" data-partner="larea">
+      <div class="partner-eyebrow">Espanha · Escritório de Advocacia</div>
+      <h1 class="partner-title">Larea &amp; Co.</h1>
+      <p class="partner-subtitle">Direito de estrangeiros e mobilidade internacional. 30.000+ vistos e 7.000+ residências aprovadas.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia · Imigração</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:meryem@lareailg.com">meryem@lareailg.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 663 272 526</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o escritório</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Larea &amp; Co. é um escritório de advocacia espanhol especializado em Direito de Estrangeiros e Mobilidade Internacional na Espanha, fundado em 2018 por Diana Jimena Gómez Ariza, Breisy Corcino Pimentel e Meryem Hamedoum Torres.</p>
+          <p>Por também serem imigrantes, as sócias diferenciam-se ao oferecer um serviço de altíssima qualidade adaptado às necessidades de cada cliente, compreendendo ambas perspectivas do processo de imigração. O escritório conta com conhecimento cultural e legislativo internacional único, ampla experiência em imigração, direito de estrangeiros, mobilidade internacional, civil e de família, penal, trabalhista e empresarial.</p>
+          <p class="meta-line"><strong>Entidade:</strong> Larea International Legal Group · NIF B88257050</p>
+          <p class="meta-line"><strong>Banco:</strong> Banc Sabadell · IBAN ES83 0081 7114 7600 0142 3246</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://lareailg.com" target="_blank" rel="noopener noreferrer">lareailg.com</a></p>
+          <div class="badge-row">
+            <span class="badge">Espanhol</span>
+            <span class="badge">Inglês</span>
+            <span class="badge">Francês</span>
+            <span class="badge">Árabe</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Serviços e honorários 2026</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>No.</th><th>Serviço</th><th>Honorário</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Solicitação de certificado de contagem de tempo</td><td><span class="price-strong">€150 + IVA</span></td></tr>
+              <tr><td>2</td><td>Retirada de documentos</td><td><span class="price-strong">€80 + IVA</span></td></tr>
+              <tr><td>3</td><td>Apostilamento de documentos</td><td><span class="price-strong">€80 + IVA</span> + custo</td></tr>
+              <tr><td>4</td><td>Acompanhamento jurídico em entrevista no Escritório de Estrangeiros</td><td><span class="price-strong">€250 + IVA</span></td></tr>
+              <tr><td>5</td><td>NIF</td><td><span class="price-strong">€200 + IVA</span></td></tr>
+              <tr><td>6</td><td>NISS</td><td><span class="price-strong">€300 + IVA</span></td></tr>
+              <tr><td>7</td><td>Visto: Reagrupamento Familiar</td><td><span class="price-strong">€900</span> principal · <span class="price-strong">€650</span> familiares</td></tr>
+              <tr><td>8</td><td>Visto: Nômade Digital</td><td><span class="price-strong">€2.500</span> principal · <span class="price-strong">€1.500</span> familiar</td></tr>
+              <tr><td>9</td><td>Ação judicial agendamento / certificado / acompanhamento</td><td><span class="price-strong">€100 + IVA</span> (Madrid) · <span class="price-strong">€150 + IVA</span> (Comunidade)</td></tr>
+              <tr><td>10</td><td>Cartão de residência para cidadãos da UE</td><td><span class="price-strong">€500 + IVA</span></td></tr>
+              <tr><td>11</td><td>Nacionalidade por tempo de residência (pacote completo)</td><td><span class="price-strong">€1.000 + IVA</span></td></tr>
+              <tr><td>12</td><td>Nacionalidade até a resolução</td><td><span class="price-strong">€600 + IVA</span></td></tr>
+              <tr><td>13</td><td>Revisão de documentos (nacionalidade e visto)</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>14</td><td>Homologação de Divórcio (Exequátur)</td><td><span class="price-strong">€1.500 + IVA</span></td></tr>
+              <tr><td>15</td><td>Casamento na Espanha (traslado, documentos e trâmite notarial)</td><td><span class="price-strong">€400 + IVA</span></td></tr>
+              <tr><td>16</td><td>Estudos (busca de admissão em ensino superior)</td><td><span class="price-strong">€450 + IVA</span></td></tr>
+              <tr><td>17</td><td>Emissão de TIE</td><td><span class="price-strong">€150 + IVA</span></td></tr>
+              <tr><td>18</td><td>Equivalência de título · Ensino Médio</td><td><span class="price-strong">€600 + IVA</span></td></tr>
+              <tr><td>19</td><td>Equivalência de título · Graduação</td><td><span class="price-strong">€900 + IVA</span></td></tr>
+              <tr><td>20</td><td>Equivalência de título (geral)</td><td><span class="price-strong">€1.200 + IVA</span></td></tr>
+              <tr><td>21</td><td>Moradia (intermediação e até 2 visitas)</td><td><span class="price-strong">1 aluguel mensal + IVA</span></td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Todos os honorários acrescidos de IVA (21%). Tabela oficial 2026.</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="docs/Portfolio-Larea-2026.pdf" target="_blank" rel="noopener noreferrer">Portfolio 2026 (PDF)</a>
+            <a class="btn btn-secondary" href="https://lareailg.com" target="_blank" rel="noopener noreferrer">Site oficial</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Enviar informações completas do caso para meryem@lareailg.com ou +34 663 272 526.</li>
+            <li>Aguardar orçamento personalizado.</li>
+            <li>Dúvidas gerais: meryem@lareailg.com.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== EFUTURO =========================== -->
+    <div class="partner-panel" data-partner="efuturo">
+      <div class="partner-eyebrow">Portugal · Escola Profissionalizante</div>
+      <h1 class="partner-title">eFuturo Academy</h1>
+      <p class="partner-subtitle">Curso profissionalizante de 15 meses com flexibilidade total para visto de estudante em Portugal.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola Profissionalizante</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:atendimentoBR@efuturoacademy.pt">atendimentoBR@efuturoacademy.pt</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg> Karla Varasquim</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>A eFuturo conduz todo o atendimento técnico sobre os cursos diretamente com o aluno. A Amorim Global não precisa conhecer os detalhes pedagógicos, a escola assume esse papel.</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://efuturoacademy.pt" target="_blank" rel="noopener noreferrer">efuturoacademy.pt</a></p>
+          <p class="meta-line"><strong>Canal de indicação:</strong> <a href="https://wa.link/c4gt1c" target="_blank" rel="noopener noreferrer">WhatsApp wa.link/c4gt1c</a></p>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos e preços</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Detalhe</th></tr></thead>
+            <tbody>
+              <tr><td>Duração</td><td>15 meses (12 meses de curso + 3 meses de estágio)</td></tr>
+              <tr><td>Datas de início</td><td>Flexíveis · aluno pode iniciar a qualquer momento</td></tr>
+              <tr><td>Valores</td><td>Variam conforme o curso · consultar a escola</td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Sem descontos exclusivos para parceiros. Desconto padrão para pagamento à vista disponível a qualquer aluno.</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://efuturoacademy.pt" target="_blank" rel="noopener noreferrer">Site oficial</a>
+            <a class="btn btn-secondary" href="https://wa.link/c4gt1c" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Condições para visto de estudante</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Condição</th></tr></thead>
+            <tbody>
+              <tr><td>Documento emitido</td><td>Carta de Aceitação</td></tr>
+              <tr><td>Prazo de validação dos documentos</td><td>Até 48 horas após pagamento</td></tr>
+              <tr><td>Prazo de emissão da Carta</td><td>Até 3 dias úteis após contrato assinado</td></tr>
+              <tr><td>Quem gere o visto</td><td>Amorim Global</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Encaminhar cliente via WhatsApp (wa.link/c4gt1c) ou e-mail atendimentoBR@efuturoacademy.pt.</li>
+            <li>Karla apresenta a escola e envia folder de cursos aptos para visto.</li>
+            <li>Após escolha do curso, escola envia metodologia, valores e lista de documentos.</li>
+            <li>Cliente realiza pagamento e envia documentos. Escola valida em até 48 horas.</li>
+            <li>Escola envia ficha de inscrição e contrato para assinatura.</li>
+            <li>Após devolução do contrato, escola emite Carta de Aceitação em até 3 dias úteis.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== SCHOOLHOUSE =========================== -->
+    <div class="partner-panel" data-partner="schoolhouse">
+      <div class="partner-eyebrow">Portugal · Escola Profissionalizante</div>
+      <h1 class="partner-title">Schoolhouse</h1>
+      <p class="partner-subtitle">Entidade formadora certificada DGERT e IEFP, com cursos presenciais validados para visto.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola Profissionalizante</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:atendimento@schoolhouse.pt">atendimento@schoolhouse.pt</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> DGERT · IEFP</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Entidade formadora certificada pela DGERT e IEFP. Cursos presenciais em diversas áreas profissionalizantes com validade para visto de estudante em Portugal.</p>
+          <p class="meta-line"><strong>Entidade:</strong> SHT, SchoolHouse, Lda. · NIF 508 873 495</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://schoolhouse.pt" target="_blank" rel="noopener noreferrer">schoolhouse.pt</a></p>
+          <div class="badge-row">
+            <span class="badge green">DGERT</span>
+            <span class="badge green">IEFP</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos e preços</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p style="margin-bottom:8px"><strong>Áreas de formação disponíveis</strong> (foco presencial, relevantes para visto):</p>
+          <div class="badge-row">
+            <span class="badge">Saúde e Bem-Estar</span>
+            <span class="badge">Gestão e Administração</span>
+            <span class="badge">Ciências Veterinárias</span>
+            <span class="badge">Educação e Marketing</span>
+            <span class="badge">Informática e Indústria Alimentar</span>
+          </div>
+          <div class="note-callout"><strong>Preços:</strong> fornecidos automaticamente pelo formulário de inscrição (valores atualizados em tempo real). Não há tabela fixa.</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://schoolhouse.pt/cursos" target="_blank" rel="noopener noreferrer">Catálogo de Cursos</a>
+            <a class="btn btn-secondary" href="https://schoolhouse-n8n.onrender.com/form/Inscrição" target="_blank" rel="noopener noreferrer">Formulário de Inscrição</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Condições para visto de estudante</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Condição</th></tr></thead>
+            <tbody>
+              <tr><td>Formato</td><td>Cursos presenciais</td></tr>
+              <tr><td>Documentos para inscrição</td><td>Passaporte + comprovativo de pagamento (upload no formulário)</td></tr>
+              <tr><td>Validação do pagamento</td><td>Até 1 dia útil</td></tr>
+              <tr><td>Documento emitido</td><td>Carta de aceitação / comprovativo de matrícula (envio direto ao aluno)</td></tr>
+              <tr><td>Acompanhamento</td><td>Relatórios mensais de conversão para validação das matrículas da Amorim</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Consultar oferta em schoolhouse.pt.</li>
+            <li>Verificar custos e datas via formulário de inscrição.</li>
+            <li>Aluno realiza inscrição de forma autônoma com upload de passaporte e comprovativo.</li>
+            <li>Schoolhouse valida o pagamento em até 1 dia útil.</li>
+            <li>Escola envia carta de aceitação diretamente ao e-mail do aluno.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== ATC =========================== -->
+    <div class="partner-panel" data-partner="atc">
+      <div class="partner-eyebrow">Irlanda · Escola de Idioma</div>
+      <h1 class="partner-title">ATC Language Schools</h1>
+      <p class="partner-subtitle">Programas com Stamp 2 em Dublin e Bray, com Study &amp; Work como porta de entrada.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola de Idioma</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Dublin · Bray</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:fernanda@atcireland.ie">fernanda@atcireland.ie</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg> Fernanda Seraphim · Executiva BR</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>ATC Dublin está no coração da cidade, região de Temple Bar e Grafton Street. ATC Bray ocupa prédios vitorianos restaurados à beira-mar, a 40 minutos ao sul de Dublin. A escola tem equipe de mentores dedicados ao bem-estar e desenvolvimento acadêmico do aluno, além de plataforma de e-learning ATC Online disponível antes, durante e após o curso.</p>
+          <p class="meta-line"><strong>Site:</strong> <a href="https://atclanguageschools.com" target="_blank" rel="noopener noreferrer">atclanguageschools.com</a></p>
+          <p class="meta-line"><strong>Contato secundário:</strong> fabrice@atcireland.ie</p>
+          <p class="meta-line"><strong>Diretor:</strong> Colm O'Byrne · colm@atcireland.ie</p>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos e preços</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Curso</th><th>Horas/sem.</th><th>Observação</th></tr></thead>
+            <tbody>
+              <tr><td>General English</td><td>16h, 20h ou 26h</td><td>Curso padrão de inglês</td></tr>
+              <tr><td>Exam Preparation</td><td>Variável</td><td>Preparação IELTS e Cambridge (B2 First / C1 Advanced)</td></tr>
+              <tr><td>Study &amp; Work (Academic Year)</td><td>25 semanas</td><td>Para não-europeus. Trabalho legal: 20h/sem. durante o curso e 40h em feriados. Inclui exame TIE. Principal porta de entrada para trajetória internacional.</td></tr>
+              <tr><td>Teacher Training &amp; Erasmus+</td><td>1–2 semanas</td><td>IA na educação, CLIL, STEAM</td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout"><strong>Preços:</strong> variáveis conforme nacionalidade do aluno. Atualizações enviadas por Fernanda via newsletter e WhatsApp. Para preços atualizados, contatar fernanda@atcireland.ie com perfil do cliente (nacionalidade, duração, cidade).</div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://atclanguageschools.com/wp-content/uploads/2026/01/ATC-Language-Schools-Adult-Brochure-2026.pdf" target="_blank" rel="noopener noreferrer">Brochura 2026 (PDF)</a>
+            <a class="btn btn-secondary" href="https://atclanguageschools.com" target="_blank" rel="noopener noreferrer">Site oficial</a>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Condições para visto de estudante (Stamp 2)</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Condição</th></tr></thead>
+            <tbody>
+              <tr><td>Programa recomendado</td><td>Study &amp; Work (Academic Year) · 25 semanas</td></tr>
+              <tr><td>Direito a trabalho</td><td>20h/sem. durante o curso · 40h em feriados</td></tr>
+              <tr><td>Exame incluído</td><td>TIE</td></tr>
+              <tr><td>Quem gere o visto</td><td>Amorim Global</td></tr>
+            </tbody>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Enviar informações do cliente para fernanda@atcireland.ie e/ou fabrice@atcireland.ie.</li>
+            <li>Aguardar proposta com curso, preços e condições de visto (Stamp 2).</li>
+            <li>Amorim Global conduz o processo de visto após confirmação da matrícula.</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- =========================== ULEARN =========================== -->
+    <div class="partner-panel" data-partner="ulearn">
+      <div class="partner-eyebrow">Irlanda · Escola de Idioma · Parceiro Estratégico</div>
+      <h1 class="partner-title">ULearn</h1>
+      <p class="partner-subtitle">Escola em Dublin com modelo de assinatura LifePass, o diferencial competitivo da Amorim.</p>
+
+      <div class="id-chips">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola de Idioma</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Dublin · 13 Harcourt St</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@ulearnschool.com">info@ulearnschool.com</a></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +353 1 475 1222</div>
+      </div>
+
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">Sobre o parceiro</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <p>Escola de inglês localizada no centro de Dublin (13 Harcourt St, Dublin 2), em compliance com a legislação irlandesa. Acreditada pelos principais órgãos do setor educacional. O mercado brasileiro é considerado forte pela escola, com demanda consistente e perfil ideal para o programa LifePass.</p>
+          <p>Diferencial central: a ULearn opera um modelo de assinatura mensal inédito no setor (LifePass), que combina previsibilidade financeira para o aluno com receita recorrente e estratégica para a Amorim.</p>
+          <div class="badge-row">
+            <span class="badge green">ACELS</span>
+            <span class="badge green">Cambridge ESOL</span>
+            <span class="badge green">Marketing English in Ireland</span>
+            <span class="badge green">Fáilte Ireland</span>
+            <span class="badge green">QQI</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- LIFEPASS DESTAQUE -->
+      <div class="section open">
+        <div class="section-header">
+          <div class="section-title">LifePass · Produto Principal</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+
+          <div class="lifepass-hero">
+            <div class="lifepass-hero-eyebrow">Modelo Netflix / Spotify aplicado à educação</div>
+            <div class="lifepass-hero-title">Um programa contínuo de 24 meses em três fases consecutivas.</div>
+            <p class="lifepass-hero-desc">
+              O LifePass é um programa único de Work &amp; Study desenhado para estudantes não-europeus. Substitui o modelo tradicional de pagamento à vista por uma estrutura escalonada que combina entrada acessível, mensalidade fixa e duas janelas de cancelamento gratuitas. Para o aluno: previsibilidade. Para a Amorim: receita recorrente e alta retenção.
+            </p>
+            <div class="lifepass-stages">
+              <div class="lifepass-stage">
+                <div class="lifepass-stage-num">Curso 1</div>
+                <div class="lifepass-stage-name">Origins</div>
+                <div class="lifepass-stage-desc">Entrada e onboarding</div>
+              </div>
+              <div class="lifepass-stage">
+                <div class="lifepass-stage-num">Curso 2</div>
+                <div class="lifepass-stage-name">Ascent</div>
+                <div class="lifepass-stage-desc">Mensalidade ativa</div>
+              </div>
+              <div class="lifepass-stage">
+                <div class="lifepass-stage-num">Curso 3</div>
+                <div class="lifepass-stage-name">Mastery</div>
+                <div class="lifepass-stage-desc">Mensalidade ativa</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <div class="highlight-card-label">Onboarding</div>
+              <div class="highlight-card-value">€997</div>
+              <div class="highlight-card-sub">Curso 1 + seguros + exame final + registos</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card-label">Mensalidade</div>
+              <div class="highlight-card-value">€297</div>
+              <div class="highlight-card-sub">A cada 28 dias por 24 meses</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card-label">Comissão Amorim</div>
+              <div class="highlight-card-value">22%</div>
+              <div class="highlight-card-sub">Sobre o programa total</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-card-label">Break-even</div>
+              <div class="highlight-card-value">~7 meses</div>
+              <div class="highlight-card-sub">Da comissão acumulada</div>
+            </div>
+          </div>
+
+          <p style="margin-top:18px"><strong>O que está incluído no onboarding €997 (Curso 1)</strong></p>
+          <div class="info-pills">
+            <div class="info-pill"><div class="info-pill-label">Curso</div><div class="info-pill-value">Work &amp; Study, primeiro ano</div></div>
+            <div class="info-pill"><div class="info-pill-label">Seguro médico</div><div class="info-pill-value">Incluído</div></div>
+            <div class="info-pill"><div class="info-pill-label">Learner Protection</div><div class="info-pill-value">Incluído</div></div>
+            <div class="info-pill"><div class="info-pill-label">Exame final</div><div class="info-pill-value">Incluído</div></div>
+            <div class="info-pill"><div class="info-pill-label">Taxas de registo</div><div class="info-pill-value">Todas incluídas</div></div>
+          </div>
+
+          <p style="margin-top:18px"><strong>Como funciona o pagamento</strong></p>
+          <ol class="step-list">
+            <li>Aluno paga €997 antes da emissão da Letter of Acceptance / Receipt of Funds (requisito para o visto).</li>
+            <li>Ao chegar à Irlanda, o aluno abre conta bancária irlandesa e autoriza Direct Debit.</li>
+            <li>A primeira mensalidade de €297 começa na data de início do Curso 1 e segue a cada 28 dias por 24 meses, incluindo períodos de férias.</li>
+            <li>Pagamento adicional de Start Fee €297 no início (varia conforme calendário de matrícula).</li>
+            <li>Cartão de crédito fica em arquivo como backup do Direct Debit. Falha de pagamento é debitada no cartão em até 24h.</li>
+          </ol>
+
+          <p style="margin-top:18px"><strong>Duas janelas de cancelamento (Cooling Off Periods)</strong></p>
+          <div class="info-pills">
+            <div class="info-pill">
+              <div class="info-pill-label">Janela 1</div>
+              <div class="info-pill-value">Primeiros 28 dias do Curso 1</div>
+            </div>
+            <div class="info-pill">
+              <div class="info-pill-label">Janela 2</div>
+              <div class="info-pill-value">Primeiros 28 dias do Curso 2</div>
+            </div>
+          </div>
+          <div class="note-callout">Durante o Cooling Off, o aluno pode <strong>migrar para o Academic Year padrão</strong> mediante pagamento de diferença. Após essas janelas, o LifePass torna-se compromisso integral de 24 meses. Os €997 do Curso 1 nunca são reembolsáveis.</div>
+
+          <p style="margin-top:18px"><strong>Riscos e penalidades a comunicar ao cliente</strong></p>
+          <ul style="margin: 8px 0 8px 20px; color: var(--text-2); font-size: 14px; line-height: 1.7;">
+            <li>Mensalidades continuam mesmo em caso de ausência temporária, falha de visto, ou retorno antecipado.</li>
+            <li>Duas mensalidades consecutivas em atraso podem resultar em remoção do programa e Exit Penalty.</li>
+            <li>Exit Penalty é calculado pro-rata: diferença entre valor pago e preço de lista do Academic Year, + €250 de taxa administrativa.</li>
+            <li>Retirada do programa pode ser reportada às autoridades migratórias irlandesas conforme exigido por lei.</li>
+          </ul>
+
+          <p style="margin-top:18px"><strong>Por que priorizar o LifePass nas indicações</strong></p>
+          <div class="note-callout">
+            Posicionamento: modelo Netflix/Spotify para educação. Para o aluno: entrada baixa e mensalidade fixa em vez de pagamento integral de €3.500–€5.000. Para a Amorim: comissão de 22% sobre o programa total, com break-even em ~7 meses e alta previsibilidade de receita ao longo dos 24 meses. Custo total para o aluno equivalente ao modelo tradicional, com vantagem de fluxo.
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="docs/LifePass-Terms-2026.pdf" target="_blank" rel="noopener noreferrer">Termos &amp; Condições LifePass (PDF)</a>
+            <a class="btn btn-secondary" href="docs/ULearn-Prices-2026.pdf" target="_blank" rel="noopener noreferrer">Tabela de Preços 2026 (PDF)</a>
+            <a class="btn btn-secondary" href="https://ulearnschool.com" target="_blank" rel="noopener noreferrer">Site oficial</a>
+          </div>
+
+        </div></div>
+      </div>
+
+      <!-- ACADEMIC YEAR TRADICIONAL -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Academic Year · Modelo Tradicional</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Faixa de preço</td><td class="price-strong">€2.750 a €4.225</td></tr>
+              <tr><td>Pacote inclui</td><td>Curso + seguro saúde + exame final</td></tr>
+              <tr><td>Comissão Amorim</td><td class="price-strong">25% sobre tuition</td></tr>
+              <tr><td>Não inclui</td><td>Acomodação</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px"><strong>Variações por curso e horário</strong></p>
+          <table class="data-table">
+            <thead><tr><th>Curso</th><th>Horas</th><th>Preço pacote</th></tr></thead>
+            <tbody>
+              <tr><td>General English AY AM</td><td>375h</td><td class="price">€3.500</td></tr>
+              <tr><td>General English Plus AY AM</td><td>500h</td><td class="price">€4.225</td></tr>
+              <tr><td>General English AY PM</td><td>375h</td><td class="price">€2.750</td></tr>
+              <tr><td>General English Plus AY PM</td><td>500h</td><td class="price">€3.225</td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Baixa retenção no modelo tradicional, alunos tendem a migrar para escolas mais baratas. <strong>Priorizar LifePass</strong> sempre que o perfil do cliente permitir.</div>
+        </div></div>
+      </div>
+
+      <!-- CURSOS SEMANAIS -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Cursos semanais (preço por semana)</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Curso</th><th>h/sem.</th><th>1–5 sem</th><th>6–7 sem</th><th>8–11 sem</th><th>12–24 sem</th><th>25 sem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>General English AM</td><td>15</td><td class="price">€180</td><td class="price">€162</td><td class="price">€158</td><td class="price">€153</td><td class="price">€153</td></tr>
+              <tr><td>General English Plus AM</td><td>20</td><td class="price">€225</td><td class="price">€203</td><td class="price">€197</td><td class="price">€191</td><td class="price">€180</td></tr>
+              <tr><td>General English PM</td><td>15</td><td class="price">€140</td><td class="price">€126</td><td class="price">€123</td><td class="price">€119</td><td class="price">€112</td></tr>
+              <tr><td>General English Plus PM</td><td>20</td><td class="price">€170</td><td class="price">€153</td><td class="price">€149</td><td class="price">€145</td><td class="price">€136</td></tr>
+              <tr><td>Intensive General English</td><td>30</td><td class="price">€290</td><td class="price">€261</td><td class="price">€254</td><td class="price">€247</td><td>—</td></tr>
+              <tr><td>IELTS / Cambridge AM</td><td>15</td><td class="price">€180</td><td class="price">€162</td><td class="price">€158</td><td class="price">€153</td><td>—</td></tr>
+              <tr><td>IELTS Preparation PM</td><td>15</td><td class="price">€140</td><td class="price">€126</td><td class="price">€123</td><td class="price">€119</td><td>—</td></tr>
+              <tr><td>Evening (After Work / IELTS / Cambridge)</td><td>4</td><td class="price">€45</td><td class="price">€40</td><td class="price">€35</td><td class="price">€35</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:12px"><strong>Aulas particulares</strong></p>
+          <table class="data-table">
+            <thead><tr><th>Formato</th><th>1–4h</th><th>5–9h</th><th>10–14h</th><th>15–19h</th><th>20h+</th></tr></thead>
+            <tbody>
+              <tr><td>1-to-1</td><td class="price">€50/h</td><td class="price">€45/h</td><td class="price">€44/h</td><td class="price">€43/h</td><td class="price">€40/h</td></tr>
+              <tr><td>1-to-2 (por pessoa)</td><td class="price">€35/h</td><td class="price">€32/h</td><td class="price">€31/h</td><td class="price">€30/h</td><td class="price">€28/h</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:12px"><strong>Taxas e extras</strong></p>
+          <div class="info-pills">
+            <div class="info-pill"><div class="info-pill-label">Registration Fee</div><div class="info-pill-value">€50</div></div>
+            <div class="info-pill"><div class="info-pill-label">Accommodation Booking</div><div class="info-pill-value">€65</div></div>
+            <div class="info-pill"><div class="info-pill-label">Learner Protect + Saúde (Non-EU)</div><div class="info-pill-value">€150</div></div>
+            <div class="info-pill"><div class="info-pill-label">Cambridge / IELTS Exam</div><div class="info-pill-value">€220</div></div>
+            <div class="info-pill"><div class="info-pill-label">Summer Supplement (Jul/Ago)</div><div class="info-pill-value">€10/sem.</div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- ACOMODAÇÃO -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Acomodação (valores indicativos)</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <table class="data-table">
+            <thead><tr><th>Tipo</th><th>Quarto</th><th>Off Peak</th><th>Peak</th></tr></thead>
+            <tbody>
+              <tr><td>Host Family Homestay</td><td>Single</td><td class="price">€240</td><td class="price">€250</td></tr>
+              <tr><td rowspan="4">City Centre Apartments</td><td>Premium</td><td class="price">€350</td><td class="price">€360</td></tr>
+              <tr><td>Superior</td><td class="price">€340</td><td class="price">€350</td></tr>
+              <tr><td>Standard</td><td class="price">€330</td><td class="price">€340</td></tr>
+              <tr><td>Twin / Shared</td><td class="price">€200</td><td class="price">€210</td></tr>
+            </tbody>
+          </table>
+          <div class="note-callout">Valores indicativos. Tarifas reais podem variar, sempre solicitar cotação. Homestays nos subúrbios de Dublin; apartamentos a pé da escola.</div>
+        </div></div>
+      </div>
+
+      <!-- PERFIL CLIENTE -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Perfil de cliente ideal</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <div class="info-pills">
+            <div class="info-pill"><div class="info-pill-label">Idade</div><div class="info-pill-value">18 a 25 anos</div></div>
+            <div class="info-pill"><div class="info-pill-label">Interesse</div><div class="info-pill-value">Estudar na Irlanda com possibilidade de Stamp 4 no futuro</div></div>
+            <div class="info-pill"><div class="info-pill-label">Capacidade financeira</div><div class="info-pill-value">€7.500 a €8.000 comprovados para visto</div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Como indicar um cliente</div>
+          <svg class="section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="section-body"><div class="section-content">
+          <ol class="step-list">
+            <li>Confirmar perfil (18 a 25 anos, €7.500–€8.000 comprovados para visto irlandês).</li>
+            <li>Apresentar o LifePass como produto principal. Reservar o Academic Year tradicional apenas quando o aluno não puder se comprometer com 24 meses.</li>
+            <li>Encaminhar à ULearn via canal de contato interno da Amorim.</li>
+            <li>Aluno faz o onboarding de €997 antes da emissão da documentação para visto.</li>
+            <li>Amorim Global conduz o processo de visto após confirmação da matrícula e da Letter of Acceptance.</li>
+            <li>Aluno abre conta na Irlanda e inicia Direct Debit ao chegar.</li>
+          </ol>
+        </div></div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  Amorim Global · Uso interno exclusivo · Portal de Parceiros · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Country tabs
+  const countryTabs = document.querySelectorAll('.country-tab');
+  const sidebarCountries = document.querySelectorAll('.sidebar-country');
+  const partnerPanels = document.querySelectorAll('.partner-panel');
+
+  countryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const country = tab.dataset.country;
+      countryTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      sidebarCountries.forEach(sc => {
+        sc.style.display = (sc.dataset.country === country) ? '' : 'none';
+      });
+      document.querySelectorAll('.sidebar-item').forEach(it => it.classList.remove('active'));
+      const firstItem = document.querySelector(`.sidebar-country[data-country="${country}"] .sidebar-item`);
+      if (firstItem) {
+        firstItem.classList.add('active');
+        showPartner(firstItem.dataset.partner);
+      }
+    });
+  });
+
+  // Sidebar items
+  document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.sidebar-item').forEach(it => it.classList.remove('active'));
+      item.classList.add('active');
+      showPartner(item.dataset.partner);
+    });
+  });
+
+  function showPartner(partner) {
+    partnerPanels.forEach(p => p.classList.remove('active'));
+    const target = document.querySelector(`.partner-panel[data-partner="${partner}"]`);
+    if (target) {
+      target.classList.add('active');
+      // For ULearn keep first two sections open (Sobre + LifePass), others first only
+      const sections = target.querySelectorAll('.section');
+      sections.forEach((sec, idx) => {
+        if (partner === 'ulearn') {
+          sec.classList.toggle('open', idx === 0 || idx === 1);
+        } else {
+          sec.classList.toggle('open', idx === 0);
+        }
+      });
+      target.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('visible');
+        observer.observe(el);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // Accordion
+  document.querySelectorAll('.section-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('open');
+    });
+  });
+
+  // AIL sub-tabs
+  document.querySelectorAll('[data-ail-tabs]').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.sub-tab');
+    const panels = tabGroup.parentElement.querySelectorAll('[data-city-panel]');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const city = tab.dataset.city;
+        panels.forEach(p => p.classList.toggle('active', p.dataset.cityPanel === city));
+      });
+    });
+  });
+
+  // Intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.partner-panel .section, .partner-panel .id-chips, .partner-panel .warning-banner').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
