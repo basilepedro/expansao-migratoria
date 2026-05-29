@@ -775,6 +775,90 @@
     line-height: 1.35;
   }
 
+  /* COMMISSION BLOCK */
+  .commission-banner {
+    background: linear-gradient(135deg, #E5F4ED 0%, #D5EEE2 100%);
+    border: 1px solid rgba(0, 135, 90, 0.18);
+    border-left: 3px solid var(--green);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .commission-banner-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .commission-banner-icon svg { width: 18px; height: 18px; }
+
+  .commission-banner-body { flex: 1; }
+
+  .commission-banner-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .commission-banner-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .commission-banner-note {
+    font-size: 13px;
+    color: var(--text-2);
+    margin-top: 4px;
+  }
+
+  .commission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .commission-item {
+    background: #fff;
+    border: 1px solid rgba(0, 135, 90, 0.15);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .commission-item-label {
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 500;
+  }
+
+  .commission-item-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
   /* FOOTER */
   footer {
     background: var(--surface);
@@ -906,6 +990,22 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg> <a href="https://ailespanol.com" target="_blank" rel="noopener noreferrer">ailespanol.com</a></div>
       </div>
 
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento especial Amorim</div>
+          <div class="commission-banner-value">Tabela por categoria de produto</div>
+          <div class="commission-grid">
+            <div class="commission-item"><span class="commission-item-label">Cursos em grupo</span><span class="commission-item-value">30%</span></div>
+            <div class="commission-item"><span class="commission-item-label">Aulas privadas</span><span class="commission-item-value">20%</span></div>
+            <div class="commission-item"><span class="commission-item-label">Programas de Internship</span><span class="commission-item-value">20%</span></div>
+            <div class="commission-item"><span class="commission-item-label">University Pathway</span><span class="commission-item-value">25%</span></div>
+            <div class="commission-item"><span class="commission-item-label">Acomodação</span><span class="commission-item-value">10%</span></div>
+            <div class="commission-item"><span class="commission-item-label">Consultoria e jurídico internacional</span><span class="commission-item-value">10%</span></div>
+          </div>
+        </div>
+      </div>
+
       <div class="section open">
         <div class="section-header">
           <div class="section-title">Sobre o parceiro</div>
@@ -955,10 +1055,11 @@
                 <tr><td>Semi-Intensivo 10</td><td>1–7 semanas</td><td class="price">A partir de €120</td><td>€60</td></tr>
               </tbody>
             </table>
-            <div class="note-callout"><strong>University Pathway Program.</strong> Programa completo com espanhol intensivo + preparação PCE/EBAU + apoio visto. Duração: 24–56 semanas. Preço: consultar.</div>
+            <div class="note-callout"><strong>University Pathway Program.</strong> Programa personalizado com espanhol intensivo + preparação PCE/EBAU + apoio visto. Duração: 24–56 semanas. <strong>Preço:</strong> sob consulta · a partir de <span class="price-strong">€4.000</span>. Valor depende do nível do estudante, disponibilidade e quantidade de disciplinas preparadas para o exame.</div>
             <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h10–13h. Turmas A1–C2. Início toda segunda-feira.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="https://ailmadrid.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a>
+              <a class="btn btn-primary" href="docs/AIL-Madrid-Prices-2026.pdf" target="_blank" rel="noopener noreferrer">Tabela Mai/2026 (PDF)</a>
+              <a class="btn btn-secondary" href="https://ailmadrid.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Site oficial</a>
               <a class="btn btn-secondary" href="https://ailmadrid.com/courses/long-term-spanish-course-and-visa/" target="_blank" rel="noopener noreferrer">Long-Term + Visto</a>
               <a class="btn btn-secondary" href="https://ailmadrid.com/courses/curso-preparacion-universidad-espanola-madrid/" target="_blank" rel="noopener noreferrer">University Pathway</a>
             </div>
@@ -977,7 +1078,10 @@
             </table>
             <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–13h ou 14h–18h. Turmas A1–C2. Início toda segunda-feira.</p>
             <div class="note-callout">Preços de longa duração: confirmar diretamente com a escola antes de informar ao cliente.</div>
-            <div class="btn-row"><a class="btn btn-primary" href="https://ailbarcelona.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a></div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="docs/AIL-Barcelona-Prices-2026.pdf" target="_blank" rel="noopener noreferrer">Tabela Mai/2026 (PDF)</a>
+              <a class="btn btn-secondary" href="https://ailbarcelona.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Site oficial</a>
+            </div>
           </div>
 
           <div class="sub-tab-panel" data-city-panel="malaga">
@@ -995,7 +1099,8 @@
             <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–12h50 ou 13h10–17h. Início toda segunda-feira.</p>
             <div class="note-callout">Não cobra suplemento de alta temporada.</div>
             <div class="btn-row">
-              <a class="btn btn-primary" href="https://ailmalaga.com/our-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a>
+              <a class="btn btn-primary" href="docs/AIL-Malaga-Prices-2026.pdf" target="_blank" rel="noopener noreferrer">Tabela Mai/2026 (PDF)</a>
+              <a class="btn btn-secondary" href="https://ailmalaga.com/our-spanish-courses/" target="_blank" rel="noopener noreferrer">Site oficial</a>
               <a class="btn btn-secondary" href="https://www.ailmalaga.com/courses/long-term-spanish-course-in-malaga/" target="_blank" rel="noopener noreferrer">Long-Term</a>
             </div>
           </div>
@@ -1016,10 +1121,13 @@
               </tbody>
             </table>
             <div class="note-callout">
-              <strong>University Pathway, Valencia:</strong> Standard Track <span class="price-strong">€6.200</span> (A2–B1) · Parallel Program a partir de <span class="price-strong">€3.500</span> (B1+, 5–8 meses) · Classic Track sob consulta.
+              <strong>University Pathway, Valencia:</strong> programa personalizado. <strong>Preço:</strong> sob consulta · a partir de <span class="price-strong">€4.000</span>. Valor depende do nível do estudante, disponibilidade e quantidade de disciplinas preparadas para o exame.
             </div>
             <p class="meta-line"><strong>Horário:</strong> Seg–Sex, 9h–13h ou 14h–18h. Início toda segunda-feira.</p>
-            <div class="btn-row"><a class="btn btn-primary" href="https://ailvalencia.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Ver no site oficial</a></div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="docs/AIL-Valencia-Prices-2026.pdf" target="_blank" rel="noopener noreferrer">Tabela Mai/2026 (PDF)</a>
+              <a class="btn btn-secondary" href="https://ailvalencia.com/our-spanish-courses/general-spanish-courses/" target="_blank" rel="noopener noreferrer">Site oficial</a>
+            </div>
           </div>
 
         </div></div>
@@ -1082,6 +1190,15 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@sevillahabla.com">info@sevillahabla.com</a></div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 954 21 53 44</div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp +34 682 47 65 13</div>
+      </div>
+
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 10%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e Sevilla Habla.</div>
+        </div>
       </div>
 
       <div class="section open">
@@ -1188,6 +1305,15 @@
         <div><strong>Atenção.</strong> A Bacaró não atua com serviços de imigração ou visto de nômade digital. Para demandas migratórias, indicar Chapapría, Larea ou Ceca Magán.</div>
       </div>
 
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 20%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e Bacaró Abogados.</div>
+        </div>
+      </div>
+
       <div class="section open">
         <div class="section-header">
           <div class="section-title">Sobre o escritório</div>
@@ -1245,6 +1371,18 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia Multidisciplinar</div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:pruiz@cecamagan.com">pruiz@cecamagan.com</a></div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 665 905 892</div>
+      </div>
+
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim · Faixa progressiva</div>
+          <div class="commission-banner-value">Indicação mútua</div>
+          <div class="commission-grid">
+            <div class="commission-item"><span class="commission-item-label">Honorários até €3.000</span><span class="commission-item-value">15%</span></div>
+            <div class="commission-item"><span class="commission-item-label">Honorários acima de €3.000</span><span class="commission-item-value">20%</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="section open">
@@ -1331,6 +1469,15 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 966 276 171 · +34 659 381 764</div>
       </div>
 
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 20%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e Chapapría, Navarro y Asociados.</div>
+        </div>
+      </div>
+
       <div class="section open">
         <div class="section-header">
           <div class="section-title">Sobre o escritório</div>
@@ -1408,6 +1555,20 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Advocacia · Imigração</div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:meryem@lareailg.com">meryem@lareailg.com</a></div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +34 663 272 526</div>
+      </div>
+
+      <div class="warning-banner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Atenção.</strong> O escritório atua apenas para serviços de imigração para <strong>pessoa física</strong>. Para casos corporativos ou de mobilidade empresarial, encaminhar a Ceca Magán ou Chapapría.</div>
+      </div>
+
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 20%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e Larea &amp; Co.</div>
+        </div>
       </div>
 
       <div class="section open">
@@ -1497,6 +1658,15 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg> Karla Varasquim</div>
       </div>
 
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 5%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e eFuturo Academy.</div>
+        </div>
+      </div>
+
       <div class="section open">
         <div class="section-header">
           <div class="section-title">Sobre o parceiro</div>
@@ -1577,6 +1747,15 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg> Escola Profissionalizante</div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:atendimento@schoolhouse.pt">atendimento@schoolhouse.pt</a></div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> DGERT · IEFP</div>
+      </div>
+
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 10%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e Schoolhouse.</div>
+        </div>
       </div>
 
       <div class="section open">
@@ -1666,6 +1845,15 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg> Fernanda Seraphim · Executiva BR</div>
       </div>
 
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 10%</div>
+          <div class="commission-banner-note">Comissão aplicada sobre cada cliente indicado entre Amorim e ATC Language Schools.</div>
+        </div>
+      </div>
+
       <div class="section open">
         <div class="section-header">
           <div class="section-title">Sobre o parceiro</div>
@@ -1746,6 +1934,22 @@
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Dublin · 13 Harcourt St</div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@ulearnschool.com">info@ulearnschool.com</a></div>
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg> +353 1 475 1222</div>
+      </div>
+
+      <div class="commission-banner">
+        <div class="commission-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="commission-banner-body">
+          <div class="commission-banner-label">Comissionamento Amorim</div>
+          <div class="commission-banner-value">Indicação mútua · 10%</div>
+          <div class="commission-banner-note">Esta é a comissão base de indicação mútua. Para o LifePass, vale a comissão de 22% sobre o programa (ver seção abaixo).</div>
+          <div class="commission-grid" style="margin-top:14px">
+            <div class="commission-item" style="flex-direction:column;align-items:flex-start;gap:6px;background:#FFF7E0;border-color:rgba(245,158,11,0.35)">
+              <span class="commission-item-label" style="font-weight:600;color:#92400E">Pré-requisito para gerar comissão</span>
+              <span style="font-size:13px;color:var(--text-2);line-height:1.5">A Amorim precisa cadastrar cada aluno indicado no sistema da escola para que a comissão seja gerada.</span>
+              <a class="btn btn-primary" href="https://sis.ulearnschool.com/sis/partners/register" target="_blank" rel="noopener noreferrer" style="margin-top:4px">Cadastrar aluno no sistema ULearn</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section open">
